@@ -1,0 +1,373 @@
+/* ===========================================
+   Header Component Styles
+   =========================================== */
+
+header {
+  background-color: #ffffff;
+  box-shadow: none;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  /* Adjust based on header size */
+  width: auto;
+  object-fit: contain;
+  transition: filter 0.4s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
+  /* Simple hover effect for image */
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+nav ul {
+  display: flex;
+  gap: 2.5rem;
+}
+
+nav a {
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.4s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-green);
+  transition: width var(--transition-normal);
+}
+
+nav a:hover {
+  color: var(--primary-green);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Header Actions */
+.header-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.header-actions a {
+  color: var(--text-gray);
+  transition: color var(--transition-normal);
+}
+
+.header-actions a:hover {
+  color: var(--primary-green);
+}
+
+/* User Greeting */
+.user-greeting {
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Admin Link */
+.admin-link {
+  color: var(--primary-green) !important;
+  font-weight: 600 !important;
+}
+
+/* Cart Badge */
+.cart-badge {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--accent-yellow);
+  color: var(--text-dark);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-dark);
+  transition: var(--transition-normal);
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: #ffffff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right var(--transition-normal);
+  z-index: 2000;
+  padding: var(--spacing-lg);
+}
+
+.mobile-drawer.active {
+  right: 0;
+}
+
+.drawer-close {
+  font-size: 2rem;
+  cursor: pointer;
+  text-align: right;
+  margin-bottom: var(--spacing-lg);
+}
+
+.mobile-nav li {
+  margin-bottom: var(--spacing-md);
+}
+
+.mobile-nav a {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1999;
+}
+
+.mobile-overlay.active {
+  display: block;
+}
+
+/* Header Layout - Center */
+.header-layout-center .header-container {
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header-layout-center .logo {
+  margin-bottom: 20px;
+}
+
+.header-layout-center nav ul {
+  gap: 3rem;
+  font-size: 1.1rem;
+}
+
+.header-layout-center .header-actions {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+}
+
+/* Header Transparent (for Landing Page) */
+/* header.header-transparent { */
+/*   background-color: transparent; */
+/*   box-shadow: none; */
+/*   position: fixed; */
+/*   width: 100%; */
+/*   top: 0; */
+/*   left: 0; */
+/* } */
+/*  */
+/* header.header-transparent nav a, */
+/* header.header-transparent .header-actions a, */
+/* header.header-transparent .user-greeting { */
+/*   color: var(--white); */
+/* } */
+/*  */
+/* header.header-transparent .cart-badge { */
+/*   color: var(--white); */
+/* } */
+/*  */
+/* /* Make logo white in transparent mode */ */
+/* header.header-transparent .logo img { */
+/*   filter: brightness(0) invert(1); */
+/* } */
+/*  */
+/* header.header-transparent .hamburger span { */
+/*   background-color: #ffffff; */
+/* } */
+/*  */
+/* /* Hover exceptions for transparent header */ */
+/* header.header-transparent nav a:hover, */
+/* header.header-transparent .header-actions a:hover { */
+/*   color: var(--accent-yellow); */
+/*   /* Make it visible */ */
+/* } */
+
+/* Responsive adjustment for center layout */
+@media (max-width: 768px) {
+  .header-layout-center .header-container {
+    flex-direction: row;
+    /* Revert to row on mobile */
+  }
+
+  .header-layout-center .logo {
+    margin-bottom: 0;
+  }
+
+  .header-layout-center .header-actions {
+    position: static;
+  }
+
+  .header-container nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* ===========================================
+   모바일 반응형 - 강제 적용
+   =========================================== */
+@media screen and (max-width: 768px) {
+    /* 데스크톱 네비게이션 완전히 숨김 */
+    header nav,
+    header .header-container nav,
+    .header-container > nav,
+    header nav ul,
+    header nav ul li {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+    }
+
+/* ===========================================
+   모바일 반응형 - 햄버거 + 로고만
+   =========================================== */
+@media screen and (max-width: 768px) {
+    /* 데스크톱 네비게이션 완전히 숨김 */
+    header nav,
+    header .header-container nav,
+    .header-container > nav,
+    header nav ul,
+    header nav ul li {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+    }
+    
+    /* Login/Join 버튼 숨김 */
+    header .header-actions,
+    .header-container .header-actions {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+    
+    /* 헤더 컨테이너 */
+    header .header-container,
+    .header-container {
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-direction: row !important;
+    }
+    
+    /* 햄버거 메뉴 표시 (왼쪽) */
+    header .hamburger,
+    .hamburger {
+        display: flex !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        left: 20px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 1001 !important;
+    }
+    
+    /* 로고 중앙 */
+    header .logo,
+    .header-container .logo {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin: 0 !important;
+        z-index: 999 !important;
+    }
+    
+    /* Center 레이아웃도 동일하게 */
+    .header-layout-center .header-container {
+        flex-direction: row !important;
+        justify-content: center !important;
+    }
+    
+    .header-layout-center .logo {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+    
+    .header-layout-center .header-actions {
+        display: none !important;
+    }
+}

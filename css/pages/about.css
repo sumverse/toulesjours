@@ -1,0 +1,205 @@
+/* About Page Styles */
+
+/* Hero Section */
+.about-hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    background: url('../../img/look_tlj_intro.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    /* Arch effect at bottom? */
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    /* Overlay for text readability */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-brand {
+    font-family: 'Dancing Script', cursive, sans-serif;
+    /* Fancy font if available */
+    font-size: 4rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Intro / Features Section */
+.about-intro {
+    padding: 80px 20px;
+    background-color: #fffcf0;
+    /* Pale warm beige */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-pill {
+    background: #fff;
+    border-radius: 50px;
+    padding: 30px 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 30px auto;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    transition: transform 0.3s ease;
+}
+
+.intro-pill:hover {
+    transform: translateY(-5px);
+}
+
+.intro-icon {
+    width: 80px;
+    height: 80px;
+    background: #FFD54F;
+    /* Yellow circle */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.intro-text {
+    text-align: left;
+}
+
+.intro-text h3 {
+    color: #148636;
+    /* TLJ Green */
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.intro-text p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Decorative background elements */
+.deco-shape {
+    position: absolute;
+    opacity: 0.6;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+}
+
+.deco-1 {
+    top: 10%;
+    left: 5%;
+    font-size: 3rem;
+    animation-delay: 0s;
+}
+
+.deco-2 {
+    top: 20%;
+    right: 10%;
+    font-size: 4rem;
+    color: #ffab91;
+    animation-delay: 1s;
+}
+
+.deco-3 {
+    bottom: 15%;
+    left: 15%;
+    font-size: 2.5rem;
+    color: #81d4fa;
+    animation-delay: 2s;
+}
+
+.deco-4 {
+    bottom: 30%;
+    right: 5%;
+    font-size: 3rem;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Bottom Background Section */
+/* Bottom Background Section */
+.about-bottom {
+    width: 100%;
+    background: url('../../img/background2.png') no-repeat center bottom;
+    background-size: 100% auto;
+    height: 0;
+    padding-bottom: 60%;
+    /* Responsive aspect ratio to show full image */
+    position: relative;
+    z-index: 2;
+}
+
+.about-bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 250px;
+    /* Gradient fade area */
+    background: linear-gradient(to bottom, #fffcf0 20%, rgba(255, 252, 240, 0));
+    z-index: 3;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .intro-pill {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .intro-text {
+        text-align: center;
+    }
+}

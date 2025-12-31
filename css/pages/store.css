@@ -1,0 +1,133 @@
+/* ===========================================
+   Store Page Styles
+   =========================================== */
+
+.store-page {
+    padding: var(--spacing-xl) var(--spacing-lg);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.store-page-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-dark);
+}
+
+/* Store Search */
+.store-search {
+    display: flex;
+    gap: var(--spacing-sm);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.store-search input {
+    flex: 1;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+}
+
+.store-search input::placeholder {
+    color: var(--text-light);
+}
+
+.store-search-btn {
+    padding: 0.8rem 2rem;
+    background-color: var(--gray-300);
+    color: var(--text-dark);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color var(--transition-normal);
+}
+
+.store-search-btn:hover {
+    background-color: var(--gray-400);
+}
+
+/* Store Content Grid */
+.store-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--spacing-xl);
+    padding-bottom: var(--spacing-xxl);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Map Container */
+.store-map {
+    width: 100%;
+    height: 450px;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-gray);
+    font-size: 1.2rem;
+}
+
+/* Store List */
+.store-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.store-item {
+    padding: var(--spacing-md);
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.store-item:hover {
+    background-color: var(--gray-100);
+    border-color: var(--gray-300);
+}
+
+.store-item-name {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.store-item-address {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .store-content {
+        grid-template-columns: 1fr;
+    }
+
+    .store-map {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .store-page-title {
+        font-size: 1.5rem;
+    }
+
+    .store-search {
+        flex-direction: column;
+    }
+
+    .store-map {
+        height: 300px;
+    }
+}

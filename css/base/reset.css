@@ -1,0 +1,135 @@
+/* ===========================================
+   Base Reset & CSS Variables
+   =========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary Colors */
+    --primary-green: #7CAA6D;
+    --primary-green-dark: #6B9A5D;
+    --primary-green-light: #8FBD80;
+    
+    /* Neutral Colors */
+    --light-beige: #F5F3EE;
+    --white: #FFFFFF;
+    --gray-100: #F8F8F8;
+    --gray-200: #E8E8E8;
+    --gray-300: #CFCFCF;
+    --gray-400: #B0B0B0;
+    
+    /* Accent Colors */
+    --accent-yellow: #FFD54F;
+    --accent-yellow-light: #FEE500;
+    --kakao-brown: #3C1E1E;
+    
+    /* Text Colors */
+    --text-dark: #2C2C2C;
+    --text-gray: #666666;
+    --text-light: #999999;
+    
+    /* Border */
+    --border-color: #E0E0E0;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 15px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 25px rgba(0,0,0,0.12);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Border Radius */
+    --radius-sm: 5px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 20px;
+    --radius-full: 50px;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 5rem;
+    
+    /* Max Widths */
+    --max-width: 1400px;
+    --max-width-sm: 1000px;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--light-beige);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+/* Container */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* Section */
+.section {
+    max-width: var(--max-width);
+    margin: var(--spacing-xxl) auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+
+.grid { display: grid; }
+
+.hidden { display: none !important; }
+.visible { display: block !important; }
